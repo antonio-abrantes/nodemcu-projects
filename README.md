@@ -236,6 +236,18 @@ Sistema de alarme com sensor ultrassônico HC-SR04. Conversão do projeto origin
 
 ---
 
+### 🕹️ [Joystick Display - Monitor de Joystick](projects/joystick-display/)
+
+Ferramenta de teste para módulos joystick analógico com visualização em display OLED e interface web em tempo real.
+
+---
+
+### 🔧 [Servo Test - Testador de Servo Motores](projects/servo-test-v1/)
+
+Sistema de teste e controle para servo motores com interface web, detecção automática de tipo e PWM otimizado para ESP8266.
+
+---
+
 ## 🎯 Objetivo do Repositório
 
 Este repositório nasceu do objetivo pessoal de **converter projetos Arduino para ESP8266**, explorando os recursos adicionais da placa, especialmente o **Wi-Fi integrado**. Após estudar com Arduino, este repositório documenta a jornada de aprendizado com o ESP8266, mantendo a compatibilidade com projetos clássicos e adicionando funcionalidades IoT.
