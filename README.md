@@ -303,7 +303,7 @@ Sistema de teste e controle para servo motores com interface web, detecção aut
 
 ---
 
-### 🔧 [FlameLight ESP - Controle RGB + LED Vela via WiFi](flameLight-esp/)
+### 🔧 [FlameLight ESP - Controle RGB + LED Vela via WiFi](projects/flameLight-esp/)
 
 Sistema de controle de LEDs RGB com efeito realista de vela via WiFi, utilizando ESP-01 (ESP8266) com interface web responsiva e 7 modos diferentes de simulação de chama.
 
