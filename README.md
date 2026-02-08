@@ -49,11 +49,13 @@ A **NodeMCU v3** é uma placa de desenvolvimento open-source baseada no chip **E
 
 ---
 
-## 📌 Pinagem da Placa
+## 📌 Pinagem das Placas
+
+### ESP8266
 
 Entender a pinagem é essencial para conectar sensores, atuadores e outros componentes. Consulte o diagrama abaixo:
 
-![Pinagem NodeMCU v3](assets/images/pinagem.jpg)
+![Pinagem NodeMCU v3](assets/images/pinagem-esp8266.jpg)
 
 ### Mapeamento de Pinos:
 
@@ -76,6 +78,59 @@ Entender a pinagem é essencial para conectar sensores, atuadores e outros compo
 - A placa opera em **3.3V** nos pinos GPIO
 - O pino analógico A0 suporta apenas **0-1V** (não conecte 5V!)
 - Alguns pinos têm funções especiais e devem ser usados com cuidado durante o boot
+
+---
+
+## 📍 Pinagem ESP-01
+
+Entender a pinagem é essencial para conectar sensores, atuadores e controlar LEDs. O ESP-01 possui apenas 8 pinos, sendo 4 GPIOs disponíveis. Consulte o diagrama abaixo:
+
+![Pinagem ESP-01](assets/images/esquema-esp01.jpg)
+
+### Mapeamento de Pinos:
+
+| Pino Físico | Nome      | Função Especial          |
+|-------------|-----------|--------------------------|
+| 1           | GND       | Ground                   |
+| 2           | GPIO2     | TX1, I2C (SDA)           |
+| 3           | GPIO0     | Flash/Boot               |
+| 4           | GPIO3     | RX (UART)                |
+| 5           | GPIO1     | TX (UART)                |
+| 6           | EN        | Chip Enable              |
+| 7           | RST       | Reset                    |
+| 8           | VCC       | Power Supply (3.3V)      |
+
+### ⚠️ Observações Importantes:
+
+**Pinos de Comunicação Serial:**
+- **GPIO1 (TXD)** e **GPIO3 (RXD)** são pinos UART
+- ⚠️ **Desconecte** esses pinos dos transistores durante o upload do código
+- ✅ **Reconecte** após o upload estar completo
+
+**Modo de Programação:**
+- **GPIO0** deve estar conectado ao **GND** durante o upload
+- **GPIO0** deve estar em **HIGH** durante operação normal (já configurado no código)
+
+### 🔧 Conexão para Upload:
+
+Para programar o ESP-01, use um **adaptador USB-Serial** (CH340 ou FTDI):
+```
+ESP-01        Adaptador USB-Serial
+──────────────────────────────────
+GND    ────►  GND
+VCC    ────►  3.3V (⚠️ NÃO use 5V!)
+TX     ────►  RX
+RX     ────►  TX
+GPIO0  ────►  GND (apenas durante upload)
+EN     ────►  3.3V
+```
+
+**Sequência de Upload:**
+1. Conecte GPIO0 ao GND
+2. Conecte o adaptador USB
+3. Faça o upload do código
+4. Desconecte GPIO0 do GND
+5. Pressione Reset ou reconecte a alimentação
 
 ---
 
@@ -245,6 +300,12 @@ Ferramenta de teste para módulos joystick analógico com visualização em disp
 ### 🔧 [Servo Test - Testador de Servo Motores](projects/servo-test-v1/)
 
 Sistema de teste e controle para servo motores com interface web, detecção automática de tipo e PWM otimizado para ESP8266.
+
+---
+
+### 🔧 [FlameLight ESP - Controle RGB + LED Vela via WiFi](flameLight-esp/)
+
+Sistema de controle de LEDs RGB com efeito realista de vela via WiFi, utilizando ESP-01 (ESP8266) com interface web responsiva e 7 modos diferentes de simulação de chama.
 
 ---
 
