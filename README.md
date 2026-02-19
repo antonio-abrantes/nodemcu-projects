@@ -309,6 +309,12 @@ Sistema de controle de LEDs RGB com efeito realista de vela via WiFi, utilizando
 
 ---
 
+### 📡 [Sonar Radar - Ultrasonic Radar Scanner via ESP8266](projects/sonar-radar/)
+
+Radar de varredura ultrassônico com exibição em tempo real no display OLED, utilizando ESP8266 (NodeMCU) com servo motor, sensor HC-SR04 e buzzer de alerta progressivo que acelera os bips conforme o objeto se aproxima.
+
+---
+
 ## 🎯 Objetivo do Repositório
 
 Este repositório nasceu do objetivo pessoal de **converter projetos Arduino para ESP8266**, explorando os recursos adicionais da placa, especialmente o **Wi-Fi integrado**. Após estudar com Arduino, este repositório documenta a jornada de aprendizado com o ESP8266, mantendo a compatibilidade com projetos clássicos e adicionando funcionalidades IoT.
